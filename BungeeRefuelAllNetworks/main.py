@@ -126,12 +126,12 @@ def bridge(wallet, withdrawal):
             logger.error(f'Refuel - {data[from_network][3]}{rpc_url.to_hex(tx_hash)}')
             list_send.append(f'{number_wallets}/{count_wallets} : {address} \n \n{STR_ERROR}Refuel - transaction failed')
             with open('failed wallets.txt', 'a') as file:
-                file.write(f'{address}:{private_key} Refuel-TransactionFailed\n')
+                file.write(f'{address}:{private_key}\n')
     except:
         logger.error(f'ERROR Refuel - {address}')
         list_send.append(f'{number_wallets}/{count_wallets} : {address} \n \n{STR_ERROR}Refuel - transaction failed')
         with open('failed wallets.txt', 'a') as file:
-            file.write(f'{address}:{private_key} Refuel-TransactionFailed\n')
+            file.write(f'{address}:{private_key}\n')
 
 if __name__ == '__main__':
     rpc_url = Web3(Web3.HTTPProvider(data[from_network][0]))
