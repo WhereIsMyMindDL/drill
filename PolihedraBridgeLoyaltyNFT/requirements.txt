@@ -1,0 +1,7 @@
+beautifulsoup4==4.10.0
+fake_useragent==0.1.11
+loguru==0.6.0
+telebot==0.0.5
+Requests==2.31.0
+tqdm==4.65.0
+web3==6.2.0
