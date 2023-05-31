@@ -7,7 +7,6 @@ from sys import stderr
 import telebot
 
 
-
 #----main-options----#
 delay_wallets = [100, 150]                                          # минимальная и максимальная задержка между кошельками
 addressNFT = '0x9d90669665607f08005cae4a7098143f554c59ef'           # адресс контракта нфт
