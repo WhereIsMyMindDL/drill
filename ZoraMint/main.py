@@ -11,7 +11,8 @@ import telebot
 #----main-options----#
 delay_wallets = [100, 150]                                          # минимальная и максимальная задержка между кошельками
 addressNFT = '0x9d90669665607f08005cae4a7098143f554c59ef'           # адресс контракта нфт
-value = 0.000777                                                    # Value в ETH из сканера
+value = 0.000777                                                    # Value из сканера
+count_NFT = 1                                                       # кол-во нфт для минта
 need_gas = [True, 30]                                               # True / False. Если True, будет ждать пока газ не опустится до введенного значения
 rpc = 'https://eth.llamarpc.com'                                    # rpc ноды
 TG_BOT_SEND = False                                                 # True / False. Если True, тогда будет отправлять результаты
@@ -78,7 +79,7 @@ def zora_mint(wallet):
         transaction = {
             'to': rpc_url.to_checksum_address(addressNFT),
             'value': int(rpc_url.to_wei(value, "ether")),
-            'data': f'0xefef39a10000000000000000000000000000000000000000000000000000000000000001',
+            'data': f'0xefef39a1000000000000000000000000000000000000000000000000000000000000000{count_NFT}',
             'chainId': 1,
             'nonce': rpc_url.eth.get_transaction_count(address),
             'gasPrice': int(rpc_url.eth.gas_price * random.uniform(1.09, 1.14)),
