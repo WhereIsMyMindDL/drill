@@ -101,6 +101,7 @@ def bridge(wallet, withdrawal):
             'from': rpc_url.to_checksum_address(address.lower()),
             'nonce': rpc_url.eth.get_transaction_count(address),
             'value': int(rpc_url.to_wei(withdrawal, "ether")),
+	    'gas': 0
         }
         if from_network == 'BSC':
             build_tx_data['gasPrice'] = rpc_url.to_wei(1, 'gwei')
