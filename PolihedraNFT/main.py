@@ -194,7 +194,7 @@ if __name__ == '__main__':
         address = account.address
         print(f'{number_wallets}/{count_wallets}: {address}\n')
 
-        list_send.append(f'{number_wallets}/{count_wallets} : {address} \n')
+        list_send.append(f'{number_wallets}/{count_wallets} : {address}')
         tokenId = ''
 
         claim_nft(private_key)
